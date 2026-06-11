@@ -65,7 +65,7 @@ jobs:
         with:
           text-file: octofit-tracker/backend/src/config/database.ts
           keyphrase: 'octofit_db'
-          minimum-occurrences: 0
+          minimum-occurrences: 1
           case-sensitive: false
 
       - name: Check database config file for mongoose
@@ -75,7 +75,7 @@ jobs:
         with:
           text-file: octofit-tracker/backend/src/config/database.ts
           keyphrase: 'mongoose'
-          minimum-occurrences: 0
+          minimum-occurrences: 1
           case-sensitive: false
 
       - name: Check seed script description
