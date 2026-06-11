@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { fetchJson } from '../api';
 
 export default function Teams() {
-  const [items, setItems] = useState<any[]>([]);
+  const [items, setItems] = useState([]);
+  const codespaceName = import.meta.env.VITE_CODESPACE_NAME;
+  const baseUrl = codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/teams`
+    : `http://localhost:8000/api/teams`;
+
   useEffect(() => {
-    fetchJson('teams')
+    fetch(baseUrl)
+      .then((res) => res.json())
       .then((data) => setItems(Array.isArray(data) ? data : data.items || []))
       .catch(() => setItems([]));
-  }, []);
+  }, [baseUrl]);
 
   return (
     <div>

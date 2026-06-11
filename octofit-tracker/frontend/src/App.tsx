@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import Users from './components/Users';
-import Activities from './components/Activities';
-import Teams from './components/Teams';
-import Leaderboard from './components/Leaderboard';
-import Workouts from './components/Workouts';
+import Users from './components/Users.jsx';
+import Activities from './components/Activities.jsx';
+import Teams from './components/Teams.jsx';
+import Leaderboard from './components/Leaderboard.jsx';
+import Workouts from './components/Workouts.jsx';
 
 export default function App() {
   return (
