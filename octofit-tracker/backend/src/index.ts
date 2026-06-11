@@ -1,5 +1,5 @@
 import express from 'express';
-import mongoose from 'mongoose';
+import { connectDatabase } from './database';
 import { User } from './models/user';
 import { Team } from './models/team';
 import { Activity } from './models/activity';
@@ -9,9 +9,7 @@ import { Workout } from './models/workout';
 const app = express();
 app.use(express.json());
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/octofit_db';
-mongoose
-  .connect(MONGO_URI)
+connectDatabase()
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error', err));
 
